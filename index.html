@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora de Productos de Limpieza "Rapi Bidon"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#products">Productos</a></li>
+            <li><a href="#admin">Administrador</a></li>
+        </ul>
+    </nav>
+    <div id="app">
+        <div id="home" class="content home-container">
+            <h1>Bienvenidos a Distribuidora de Productos de Limpieza "Rapi Bidon"</h1>
+            <img src="assets/LogoRapiBidon.jfif" height="400" width="400" alt="Logo Rapi Bidon">
+            
+            <p>En Distribuidora de Productos de Limpieza 'Rapi Bidon', nos dedicamos a ofrecer soluciones de limpieza de alta calidad, adaptadas a las necesidades de nuestros clientes. Con años de experiencia en el sector, nuestro objetivo es ser su aliado confiable en la distribución de productos de limpieza.</p>
+            
+            <h2>Nuestros Valores</h2>
+            <p>Nuestros valores fundamentales incluyen la sostenibilidad, la innovación y el compromiso con la satisfacción del cliente. Trabajamos diariamente para ofrecer productos que no solo cumplen con los estándares más altos de calidad, sino que también son respetuosos con el medio ambiente.</p>
+            
+            <h2>¡Atención a Todos Nuestros Clientes!</h2>
+            <p>No te pierdas nuestras ofertas exclusivas por tiempo limitado. ¡Contáctanos y aprovecha los descuentos especiales en nuestros productos más populares!</p>
+            
+            <h2>Productos Destacados</h2>
+            <div class="featured-products">
+                <div class="product">
+                    <h3>Detergente Ecológico</h3>
+                    <img src="assets/detergent.png" alt="Detergente Ecológico" width="200" height="200">
+                    <p>Un detergente biodegradable que cuida el medio ambiente y deja tu ropa impecable.</p>
+                    
+                </div>
+                <div class="product">
+                    <h3>Desinfectante Multiusos</h3>
+                    <img src="assets/cleaning.jpg" alt="Desinfectante Multiusos" width="200" height="200">
+                    <p>Desinfecta superficies y elimina gérmenes con un agradable aroma a limón.</p>
+                    
+                </div>
+                <div class="product">
+                    <h3>Limpiador de Vidrios</h3>
+                    <img src="assets/limpiavidrios.png" alt="Limpiador de Vidrios" width="200" height="200">
+                    <p>Consigue cristales brillantes y sin manchas con nuestro limpiador especial.</p>
+                    
+                </div>
+            </div>
+        
+            <h2>Testimonios de Clientes</h2>
+            <p>"Rapi Bidon siempre tiene lo que necesitamos, y su servicio es excepcional."</p>
+            
+            <h2>¡Contáctanos!</h2>
+            <p>Para más información, no dudes en contactarnos a través de nuestro formulario en línea o a nuestro número de WhatsApp.</p>
+            
+        </div>
+        
+        
+        
+        <div id="products" class="content" style="display:none;">
+            <h1>Nuestros Productos</h1>
+            <div id="product-list">
+                <div class="product-grid"></div>
+            </div>
+        </div>
+        <div id="admin" class="content" style="display:none;">
+            <h1>Panel de Administración</h1>
+            <h2>Agregar Nuevo Producto</h2>
+            <input type="text" id="new-product-name" placeholder="Nombre del producto">
+            <input type="number" id="new-product-price" placeholder="Precio">
+            <input type="number" id="new-product-stock" placeholder="Stock">
+            <input type="text" id="new-product-image" placeholder="URL de la imagen">
+            <button onclick="addProduct()">Agregar Producto</button>
+            <h2>Modificar Producto Existente</h2>
+            <select id="product-select"></select>
+            <input type="number" id="update-price" placeholder="Nuevo precio">
+            <input type="number" id="update-stock" placeholder="Nuevo stock">
+            <button onclick="updateProduct()">Actualizar Producto</button>
+            <h2>Eliminar Producto</h2>
+            <select id="delete-product-select"></select>
+            <button onclick="deleteProduct()">Eliminar Producto</button>
+        </div>
+        <div id="about" class="content about-container" style="display:none;">
+            <h1>Sobre Nosotros</h1>
+            <img src="assets/aboutUs.png" height="400" width="400" alt="Logo Rapi Bidon"> 
+            <h2>Visión</h2>
+            <p>Ser la empresa líder en distribución de productos de limpieza, reconocida por nuestra calidad, eficiencia y compromiso con el medio ambiente.</p>
+            <h2>Misión</h2>
+            <p>Proporcionar soluciones de limpieza innovadoras y de alta calidad, garantizando la satisfacción de nuestros clientes y contribuyendo a un entorno más limpio y saludable.</p>
+        </div>
+        
+    </div>
+    <div class="contacto">
+        <h2>Contacto</h2>
+        <div class="botones">
+            <button onclick="window.location.href='mailto:info@rapibidon.com'">Enviar Email</button>
+            <button onclick="window.open('https://wa.me/1234567890', '_blank')">Contactar por WhatsApp</button>
+        </div>
+        <p>&copy; 2024 Distribuidora de Productos de Limpieza "Rapi Bidon". Todos los derechos reservados.</p>
+    </div>
+      
+    <script src="script.js"></script>
+</body>
+</html>

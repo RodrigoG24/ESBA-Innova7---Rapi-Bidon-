@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    background-image: url('assets/background4.jpg'); /* ruta a la imagen */
+    background-size: cover; /* ajusta la imagen al tamaño del body */
+    background-position: center; /* centra la imagen */
+}
+
+#app {
+    margin: 0;
+    width: 100%;
+}
+
+nav {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(98, 186, 215, 0.8);
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px; /* Bordes redondeados para un look moderno */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px; /* Espaciado más amplio entre los elementos */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold; /* Texto en negrita para un mejor contraste */
+    transition: color 0.3s; /* Efecto de transición al pasar el ratón */
+}
+
+nav a:hover {
+    color: #8bc34a; /* Cambio de color al pasar el ratón */
+}
+
+h1, h2 {
+    color: #8bc34a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.app {
+    margin-top: 50px;
+}
+
+.home-container {
+    max-width: 800px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centrar el contenedor */
+    text-align: center; /* Centrar el texto */
+    padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.home-container h1 {
+    color: #8bc34a; /* Color del título principal */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.home-container h2 {
+    color: #333; /* Color del subtítulo */
+    margin-top: 20px; /* Espacio encima del subtítulo */
+    margin-bottom: 10px; /* Espacio debajo del subtítulo */
+}
+
+.home-container p {
+    color: #555; /* Color del texto */
+    line-height: 1.6; /* Mejorar la legibilidad del texto */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+#home img {
+    display: block;
+    margin: 20px auto; /* Espacio arriba y abajo de la imagen */
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.9); /* Mayor opacidad */
+    padding: 20px;
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.contacto {
+    background-color: rgba(98, 186, 215, 0.8);
+    padding: 15px; /* Espaciado más amplio */
+    text-align: center;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.contacto p {
+    padding-top: 1rem;
+}
+
+.contacto .botones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0; /* Ajuste de margen */
+}
+
+.contacto .botones button {
+    margin: 0 10px;
+}
+
+.about-container {
+    max-width: 800px; /* Ancho máximo para el contenido */
+    margin: 0 auto; /* Centrar el contenedor */
+    text-align: center; /* Centrar el texto */
+    padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+.about-container h1 {
+    color: #8bc34a; /* Color del título principal */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.about-container h2 {
+    color: #333; /* Color del subtítulo */
+    margin-top: 20px; /* Espacio encima del subtítulo */
+    margin-bottom: 10px; /* Espacio debajo del subtítulo */
+}
+
+.about-container p {
+    color: #555; /* Color del texto */
+    line-height: 1.6; /* Mejorar la legibilidad del texto */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+
+
+.product {
+    border: 1px solid #ddd;
+    padding: 15px; /* Mayor espacio interno */
+    margin: 10px;
+    border-radius: 8px; /* Bordes más redondeados */
+    text-align: center;
+    width: auto; 
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Suavizar la animación */
+    background-color: #fff; /* Color de fondo blanco para los productos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para los productos */
+}
+
+.product:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Un poco menos de escala para la animación */
+}
+
+.product img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 5px; /* Bordes redondeados en las imágenes */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático para más flexibilidad */
+    grid-gap: 20px; /* Mayor espacio entre productos */
+}
+
+button {
+    background-color: #8bc34a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s; /* Suave transición al pasar el ratón */
+}
+
+button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el ratón */
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border 0.3s; /* Transición suave en el borde */
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border: 1px solid #8bc34a; /* Cambia el color del borde al enfocar */
+}
+
+#about img {
+    display: block;
+    margin: 0 auto;   
+}
