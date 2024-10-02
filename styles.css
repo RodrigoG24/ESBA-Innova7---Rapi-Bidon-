@@ -19,39 +19,43 @@ body {
     width: 100%;
 }
 
-nav {
-    position: static;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(98, 186, 215, 0.8);
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px; /* Bordes redondeados para un look moderno */
-}
-
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Espaciar los elementos entre sí */
+    align-items: center; /* Centrar verticalmente */
+    position: relative;
 }
 
 nav li {
-    margin: 0 15px; /* Espaciado más amplio entre los elementos */
+    margin: 0 15px;
+}
+
+nav .left-menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: auto; /* Para que ocupe el espacio disponible y se centre */
+}
+
+nav .right-menu {
+    margin-left: auto; /* Mueve "Administrador" a la derecha */
+    position: absolute;
+    right: 0;
 }
 
 nav a {
     text-decoration: none;
     color: #333;
-    font-weight: bold; /* Texto en negrita para un mejor contraste */
-    transition: color 0.3s; /* Efecto de transición al pasar el ratón */
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #8bc34a; /* Cambio de color al pasar el ratón */
+    color: #8bc34a;
 }
+
 
 h1, h2 {
     color: #8bc34a;
