@@ -8,59 +8,162 @@
 }
 
 body {
-    background-color: #f0f8ff;
-    background-image: url('assets/background4.jpg'); /* ruta a la imagen */
-    background-size: cover; /* ajusta la imagen al tamaño del body */
-    background-position: center; /* centra la imagen */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #f9f5e3, #dff0df); /* Degradado aplicado */
+    font-family: "Open Sans", sans-serif;
 }
+
+
+/* Ajuste del header */
+header {
+    background: linear-gradient(to bottom, #3b9e43, #b7de62);
+    height: 50vh; /* Asegura que el header ocupe todo el alto de la ventana */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacio uniforme entre el nav y el contenido */
+    align-items: center;
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+/* Ajuste del contenido dentro del header */
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Ajuste del nav */
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Elimina los márgenes por defecto */
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.left-menu, .right-menu {
+    display: flex;
+}
+
+.left-menu li, .right-menu li {
+    margin-right: 15px;
+}
+
+/* Ajuste de los títulos */
+.title-section {
+    text-align: center;
+    margin-top: 40px; /* Añade espacio entre el nav y los títulos */
+}
+
+.title-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Ajuste de la sub-título y logo */
+.sub-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espacio adicional debajo del título principal */
+}
+
+.sub-title h2 {
+    font-size: 36px;
+    line-height: 1.4;
+    margin-right: 20px;
+}
+
+/* Ajuste del logo */
+.logo {
+    width: 150px; /* Tamaño del logo más pequeño para ajustarse mejor al contenido */
+    height: auto;
+}
+
+.left-menu, .right-menu {
+    display: flex;
+}
+
+.left-menu li, .right-menu li {
+    margin-right: 15px;
+}
+
+/* Estilo para los títulos */
+.title-section {
+    margin-top: 20px;
+}
+
+.title-section h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.sub-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sub-title h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-right: 20px;
+}
+
+/* Estilo para el logo */
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #333333;
+  }
+
+p {
+    font-family: 'Lato', sans-serif;
+    color: #666666;
+}
+
+button {
+    background-color: #8bc34a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+button:hover {
+    background-color: #45a049;
+}
+
 
 #app {
     margin: 0;
     width: 100%;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Espaciar los elementos entre sí */
-    align-items: center; /* Centrar verticalmente */
-    position: relative;
-}
-
-nav li {
-    margin: 0 15px;
-}
-
-nav .left-menu {
-    display: flex;
-    justify-content: center;
-    flex-grow: auto; /* Para que ocupe el espacio disponible y se centre */
-}
-
-nav .right-menu {
-    margin-left: auto; /* Mueve "Administrador" a la derecha */
-    position: absolute;
-    right: 0;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #8bc34a;
-}
-
-
-h1, h2 {
-    color: #8bc34a;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .app {
@@ -68,14 +171,16 @@ h1, h2 {
 }
 
 .home-container {
-    max-width: 800px; /* Ancho máximo para el contenido */
-    margin: 0 auto; /* Centrar el contenedor */
-    text-align: center; /* Centrar el texto */
-    padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    width: 100%; /* Ocupa todo el ancho del body */
+    margin: 0; /* Elimina cualquier margen */
+    text-align: center; /* Mantiene el texto centrado */
+    padding: 40px 20px; /* Espaciado interno */
+    background: linear-gradient(to bottom, #f9f5e3, #dff0df); /* Degradado aplicado */
+    border-radius: 0; /* Elimina el borde redondeado */
+    box-shadow: none; /* Elimina la sombra */
 }
+
+
 
 .home-container h1 {
     color: #8bc34a; /* Color del título principal */
@@ -103,7 +208,7 @@ h1, h2 {
     background-color: rgba(255, 255, 255, 0.9); /* Mayor opacidad */
     padding: 20px;
     border-radius: 10px; /* Bordes más redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    box-shadow: 0 4px 20px rgba(2, 253, 65, 0.2); /* Sombra más pronunciada */
 }
 
 .contacto {
@@ -129,7 +234,7 @@ h1, h2 {
 }
 
 .about-container {
-    max-width: 800px; /* Ancho máximo para el contenido */
+    width: 100%; /* Ocupa todo el ancho del body */
     margin: 0 auto; /* Centrar el contenedor */
     text-align: center; /* Centrar el texto */
     padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
@@ -154,7 +259,6 @@ h1, h2 {
     line-height: 1.6; /* Mejorar la legibilidad del texto */
     margin-bottom: 20px; /* Espacio debajo del párrafo */
 }
-
 
 
 .product {
@@ -188,24 +292,6 @@ h1, h2 {
     grid-gap: 20px; /* Mayor espacio entre productos */
 }
 
-button {
-    background-color: #8bc34a;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s; /* Suave transición al pasar el ratón */
-}
-
-button:hover {
-    background-color: #45a049; /* Color más oscuro al pasar el ratón */
-}
 
 input[type="text"], input[type="number"] {
     width: 100%;
