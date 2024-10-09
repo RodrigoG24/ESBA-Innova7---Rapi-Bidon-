@@ -1,6 +1,6 @@
 let products = [
     {name: "Detergente Magistral", price: 6500, stock: 25, image: "assets/DetergenteMagistral.png"},
-    {name: "Suavizante", price: 6000, stock: 15, image: "assets/suavizante.jfif"},
+    {name: "Suavizante Vivere", price: 7533, stock: 15, image: "assets/SuavizanteVivere.jpg"},
     {name: "Trapo de piso", price: 900, stock: 16, image: "assets/trapodepiso.jfif"},
     {name: "Balde de limpieza", price: 2500, stock: 12, image: "assets/balde.png"},
     {name: "Escoba", price: 3800, stock: 7, image: "assets/escoba.png"},
