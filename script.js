@@ -1,5 +1,5 @@
 let products = [
-    {name: "Detergente", price: 6500, stock: 25, image: "assets/detergent.png"},
+    {name: "Detergente Magistral", price: 6500, stock: 25, image: "assets/DetergenteMagistral.png"},
     {name: "Suavizante", price: 6000, stock: 15, image: "assets/suavizante.jfif"},
     {name: "Trapo de piso", price: 900, stock: 16, image: "assets/trapodepiso.jfif"},
     {name: "Balde de limpieza", price: 2500, stock: 12, image: "assets/balde.png"},
@@ -18,20 +18,31 @@ function showSection(section) {
 }
 
 function displayProducts() {
-    const productList = document.querySelector('.product-grid');
+    const productList = document.querySelector('.product-list');
     productList.innerHTML = '';
+    
     products.forEach((product, index) => {
-        const productDiv = document.createElement('div');
-        productDiv.classList.add('product');
-        productDiv.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h2>${product.name}</h2>
-            <p>Precio: $${product.price}</p>
-            <p>Stock: ${product.stock}</p>
+        const productItem = document.createElement('li');
+        productItem.classList.add('product-item');
+        productItem.innerHTML = `
+            <div class="product-summary" onclick="toggleDetails(${index})">
+                <span>${product.name}</span>
+                <span>Precio: $${product.price}</span>
+                <span>Stock: ${product.stock}</span>
+            </div>
+            <div class="product-details" id="details-${index}">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
         `;
-        productList.appendChild(productDiv);
+        productList.appendChild(productItem);
     });
 }
+
+function toggleDetails(index) {
+    const details = document.getElementById(`details-${index}`);
+    details.style.display = details.style.display === 'none' || !details.style.display ? 'block' : 'none';
+}
+
 
 function addProduct() {
     const name = document.getElementById('new-product-name').value;

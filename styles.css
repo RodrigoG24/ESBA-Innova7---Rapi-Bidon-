@@ -335,11 +335,58 @@ button:hover {
     border-radius: 5px; /* Bordes redondeados en las imágenes */
 }
 
+/*
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático para más flexibilidad */
-    grid-gap: 20px; /* Mayor espacio entre productos */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste automático para más flexibilidad 
+    grid-gap: 20px; /* Mayor espacio entre productos 
 }
+*/
+
+.product-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-item:hover {
+    background-color: #f9f9f9;
+}
+
+.product-summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-weight: bold;
+    text-align: center; /* Centra el texto de manera horizontal */
+}
+
+.product-summary span {
+    flex: 1; /* Asegura que cada span ocupe el mismo espacio */
+    text-align: center; /* Centra el texto dentro de cada span*/
+}
+
+.product-details {
+    display: none; /* Oculto por defecto */
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.product-details img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
 
 
 input[type="text"], input[type="number"] {
