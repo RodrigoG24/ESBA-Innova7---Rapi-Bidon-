@@ -11,15 +11,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to bottom, #f9f5e3, #dff0df); /* Degradado aplicado */
+    background-color: #1a72b2;
     font-family: "Open Sans", sans-serif;
 }
 
 
 /* Ajuste del header */
 header {
-    background: linear-gradient(to bottom, #3b9e43, #b7de62);
-    height: 50vh; /* Asegura que el header ocupe todo el alto de la ventana */
+    background: linear-gradient(to bottom, #1a72b2, #299dbc);
+    height: 60vh; /* Asegura que el header ocupe todo el alto de la ventana */
     color: white;
     display: flex;
     flex-direction: column;
@@ -65,6 +65,7 @@ nav a:hover {
 
 /* Ajuste de los títulos */
 .title-section {
+    padding-top: 2rem;
     text-align: center;
     margin-top: 40px; /* Añade espacio entre el nav y los títulos */
 }
@@ -93,6 +94,25 @@ nav a:hover {
     width: 150px; /* Tamaño del logo más pequeño para ajustarse mejor al contenido */
     height: auto;
 }
+
+.logo-container {
+    width: 450px; /* Ajusta el tamaño del círculo */
+    height: 250px;
+    border-radius: 50%; /* Hace que el contenedor sea circular */
+    overflow: hidden; /* Asegura que la imagen no se salga del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgba(255, 255, 255, 0.2); /* Añade un borde alrededor del círculo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Agrega una sombra para darle profundidad */
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen llene completamente el círculo */
+}
+
 
 .left-menu, .right-menu {
     display: flex;
@@ -175,7 +195,8 @@ button:hover {
     margin: 0; /* Elimina cualquier margen */
     text-align: center; /* Mantiene el texto centrado */
     padding: 40px 20px; /* Espaciado interno */
-    background: linear-gradient(to bottom, #f9f5e3, #dff0df); /* Degradado aplicado */
+    /*background: linear-gradient(to bottom, #299dbc, #1a72b2);*/
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
     border-radius: 0; /* Elimina el borde redondeado */
     box-shadow: none; /* Elimina la sombra */
 }
@@ -183,7 +204,7 @@ button:hover {
 
 
 .home-container h1 {
-    color: #8bc34a; /* Color del título principal */
+    /*color: #8bc34a; /* Color del título principal */
     margin-bottom: 20px; /* Espacio debajo del título */
 }
 
@@ -205,14 +226,14 @@ button:hover {
 }
 
 .content {
-    background-color: rgba(255, 255, 255, 0.9); /* Mayor opacidad */
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
     padding: 20px;
-    border-radius: 10px; /* Bordes más redondeados */
-    box-shadow: 0 4px 20px rgba(2, 253, 65, 0.2); /* Sombra más pronunciada */
+    text-align: center;
 }
 
 .contacto {
-    background-color: rgba(98, 186, 215, 0.8);
+    /*background: linear-gradient(to bottom, #b7de62, #3b9e43 );*/
+    background: linear-gradient(to bottom, #1a72b2, #299dbc);
     padding: 15px; /* Espaciado más amplio */
     text-align: center;
     border-radius: 5px; /* Bordes redondeados */
@@ -238,13 +259,16 @@ button:hover {
     margin: 0 auto; /* Centrar el contenedor */
     text-align: center; /* Centrar el texto */
     padding: 40px 20px; /* Espaciado interno: 40px arriba y abajo, 20px a los lados */
+    /*background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
+    /*background-color: #b7de62;*/
+    /*background: linear-gradient(to bottom, #299dbc, #1a72b2);*/
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con algo de opacidad */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
 
 .about-container h1 {
-    color: #8bc34a; /* Color del título principal */
+    color: #333333; /* Color del título principal */
     margin-bottom: 20px; /* Espacio debajo del título */
 }
 
@@ -260,6 +284,30 @@ button:hover {
     margin-bottom: 20px; /* Espacio debajo del párrafo */
 }
 
+
+.contenedor {
+    border: 1px solid #ddd;
+    padding: 15px; /* Mayor espacio interno */
+    margin: 10px;
+    border-radius: 8px; /* Bordes más redondeados */
+    text-align: center;
+    width: 20%; 
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Suavizar la animación */
+    /*background-color: #fff; /* Color de fondo blanco para los productos */
+    background: linear-gradient(to bottom, #1a72b2, #299dbc); /* Color de fondo azul/celeste para los productos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para los productos */
+}
+
+.contenedor h3 {
+    color: #333;    
+    margin-top: 20px;
+}
+
+.contenedor:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Un poco menos de escala para la animación */
+}
 
 .product {
     border: 1px solid #ddd;
@@ -278,6 +326,7 @@ button:hover {
     cursor: pointer;
     transform: scale(1.05); /* Un poco menos de escala para la animación */
 }
+
 
 .product img {
     max-width: 100%;
