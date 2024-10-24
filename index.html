@@ -80,20 +80,23 @@
         <!-- Panel de administración -->
         <div id="admin" class="content" style="display:none;">
             <h1>Panel de Administración</h1>
+
             <h2>Agregar Nuevo Producto</h2>
             <input type="text" id="new-product-name" placeholder="Nombre del producto">
             <input type="number" id="new-product-price" placeholder="Precio">
             <input type="number" id="new-product-stock" placeholder="Stock">
             <input type="text" id="new-product-image" placeholder="URL de la imagen">
             <button onclick="addProduct()">Agregar Producto</button>
+
             <h2>Modificar Producto Existente</h2>
             <select id="product-select"></select>
             <input type="number" id="update-price" placeholder="Nuevo precio">
             <input type="number" id="update-stock" placeholder="Nuevo stock">
             <button onclick="updateProduct()">Actualizar Producto</button>
+
             <h2>Eliminar Producto</h2>
             <select id="delete-product-select"></select>
-            <button onclick="deleteProduct()">Eliminar Producto</button>
+            <button id="delete-btn" onclick="deleteProduct()">Eliminar Producto</button>
         </div>
 
         <!-- Panel de Acerca de nosotros -->

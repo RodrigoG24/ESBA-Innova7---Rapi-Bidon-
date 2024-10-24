@@ -68,3 +68,88 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Función para llenar los select de productos para modificar y eliminar
+function populateProductSelects() {
+    const productSelect = document.getElementById('product-select');
+    const deleteProductSelect = document.getElementById('delete-product-select');
+
+    // Limpiar los selects
+    productSelect.innerHTML = '';
+    deleteProductSelect.innerHTML = '';
+
+    // Obtener productos desde la API
+    fetch('http://localhost:5000/api/productos')
+        .then(response => response.json())
+        .then(products => {
+            if (!products || products.length === 0) {
+                productSelect.innerHTML = '<option>No hay productos disponibles</option>';
+                deleteProductSelect.innerHTML = '<option>No hay productos disponibles</option>';
+                return;
+            }
+
+            // Llenar los selects con los productos
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product._id;
+                option.textContent = `${product.name} - Precio: $${product.price}`;
+
+                // Añadir las opciones a ambos selects
+                productSelect.appendChild(option);
+                deleteProductSelect.appendChild(option.cloneNode(true)); // Clonar la opción para el segundo select
+            });
+        })
+        .catch(error => console.error('Error al obtener productos:', error));
+}
+
+// Llamar a la función cuando se cargue la página
+window.onload = populateProductSelects;
+
+function updateProduct() {
+    const productId = document.getElementById('product-select').value;
+    const newPrice = document.getElementById('update-price').value;
+    const newStock = document.getElementById('update-stock').value;
+
+    // Petición PUT para actualizar el producto
+    fetch(`http://localhost:5000/api/productos/${productId}`, { // La ruta ahora es coherente
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            price: newPrice,
+            stock: newStock
+        })
+    })
+    .then(response => response.json())
+    .then(updatedProduct => {
+        console.log('Producto actualizado:', updatedProduct);
+        alert('Producto actualizado con éxito');
+        populateProductSelects(); // Actualiza la lista de productos
+    })
+    .catch(error => console.error('Error al actualizar el producto:', error));
+}
+
+
+function deleteProduct() {
+    const productId = document.getElementById('delete-product-select').value;
+    console.log("Producto seleccionado para eliminar:", productId); // Verificar el ID del producto
+
+    // Petición DELETE para eliminar el producto
+    fetch(`http://localhost:5000/api/productos/${productId}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al eliminar el producto');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Producto eliminado:', data);
+        alert('Producto eliminado con éxito');
+        populateProductSelects(); // Actualiza la lista de productos
+    })
+    .catch(error => console.error('Error al eliminar el producto:', error));
+}
+

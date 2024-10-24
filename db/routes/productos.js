@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Product = require('../models/product'); // Modelo del producto
+const mongoose = require('mongoose');
+
 
 // Obtener todos los productos
 router.get('/', async (req, res) => {
@@ -31,15 +33,13 @@ router.post('/products', async (req, res) => {
 });
 
 // Actualizar un producto
-router.put('/products/:id', async (req, res) => {
+router.put('/:id', async (req, res) => { // Cambio aquí para usar /api/productos/:id
     try {
         const product = await Product.findById(req.params.id);
         if (!product) return res.status(404).json({ message: 'Producto no encontrado' });
 
-        product.name = req.body.name || product.name;
         product.price = req.body.price || product.price;
         product.stock = req.body.stock || product.stock;
-        product.image = req.body.image || product.image;
 
         const updatedProduct = await product.save();
         res.json(updatedProduct);
@@ -49,16 +49,23 @@ router.put('/products/:id', async (req, res) => {
 });
 
 // Eliminar un producto
-router.delete('/products/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
+    console.log(`Recibiendo petición para eliminar el producto con ID: ${req.params.id}`);
+    
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+        return res.status(400).json({ message: 'ID de producto no válido' });
+    }
+
     try {
-        const product = await Product.findById(req.params.id);
+        const product = await Product.findByIdAndDelete(req.params.id);
         if (!product) return res.status(404).json({ message: 'Producto no encontrado' });
 
-        await product.remove();
         res.json({ message: 'Producto eliminado' });
     } catch (err) {
+        console.error('Error en la eliminación del producto:', err);
         res.status(500).json({ message: err.message });
     }
 });
+
 
 module.exports = router;
