@@ -284,6 +284,12 @@ button:hover {
     margin-bottom: 20px; /* Espacio debajo del párrafo */
 }
 
+.featured-products {
+    display: flex;
+    justify-content: space-around; /* Espacio uniforme entre los productos */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a nuevas líneas */
+    margin: 20px 0; /* Espacio vertical adicional */
+}
 
 .contenedor {
     border: 1px solid #ddd;
@@ -308,6 +314,7 @@ button:hover {
     cursor: pointer;
     transform: scale(1.05); /* Un poco menos de escala para la animación */
 }
+
 
 .product {
     border: 1px solid #ddd;
@@ -407,4 +414,60 @@ input[type="text"]:focus, input[type="number"]:focus {
 #about img {
     display: block;
     margin: 0 auto;   
+}
+
+#admin {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+#admin h1 {
+    font-size: 3rem;
+    padding-bottom: 2%;
+}
+
+#admin button {
+    margin-bottom: 2%;
+}
+
+/* ACA EMPIEZA EL RESPONSIVE */
+@media (max-width: 768px) {
+    nav li {
+        display: block; /* Navegación vertical */
+        margin: 10px 0; /* Espacio entre los elementos */
+    }
+
+    .contenedor {
+        flex: 1 1 100%; /* Un producto por fila */
+    }
+
+    header {
+        height: 50vh; /* Ajuste del tamaño del header */
+    }
+
+    .header-content {
+        padding: 10px; /* Menos espacio en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 40vh; /* Ajuste para móviles pequeños */
+    }
+
+    .title-section h2 {
+        font-size: 24px; /* Tamaño de fuente más pequeño */
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: column; /* Botones apilados */
+    }
+
+    .botones button {
+        width: 100%; /* Botones ocupan todo el ancho */
+        margin: 5px 0; /* Espacio entre botones */
+    }
 }

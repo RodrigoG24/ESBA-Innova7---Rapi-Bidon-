@@ -105,6 +105,59 @@ function populateProductSelects() {
 // Llamar a la función cuando se cargue la página
 window.onload = populateProductSelects;
 
+
+// Función para añadir productos
+async function addProduct() {
+    // Obtener los valores de los campos de entrada
+    const name = document.getElementById('new-product-name').value;
+    const price = document.getElementById('new-product-price').value;
+    const stock = document.getElementById('new-product-stock').value;
+    const image = document.getElementById('new-product-image').value;
+
+    // Crear un objeto con los datos del nuevo producto
+    const productData = {
+        name: name,
+        price: parseFloat(price),
+        stock: parseInt(stock),
+        image: image
+    };
+
+    try {
+        // Enviar la solicitud POST al servidor para agregar el nuevo producto
+        const response = await fetch('http://localhost:5000/api/productos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(productData)
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al agregar el producto');
+        }
+
+        // Convertir la respuesta en JSON
+        const newProduct = await response.json();
+        console.log('Producto agregado:', newProduct);
+
+        // Mostrar un mensaje de éxito y limpiar los campos de entrada
+        alert('Producto agregado exitosamente');
+        document.getElementById('new-product-name').value = '';
+        document.getElementById('new-product-price').value = '';
+        document.getElementById('new-product-stock').value = '';
+        document.getElementById('new-product-image').value = '';
+
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Hubo un problema al agregar el producto');
+    }
+}
+
+
+
+
+
+// Funcion para actualizar los productos.
 function updateProduct() {
     const productId = document.getElementById('product-select').value;
     const newPrice = document.getElementById('update-price').value;
@@ -131,6 +184,7 @@ function updateProduct() {
 }
 
 
+// Funcion para eliminar productos.
 function deleteProduct() {
     const productId = document.getElementById('delete-product-select').value;
     console.log("Producto seleccionado para eliminar:", productId); // Verificar el ID del producto

@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // Crear un nuevo producto
-router.post('/products', async (req, res) => {
+router.post('/', async (req, res) => {
     const product = new Product({
         name: req.body.name,
         price: req.body.price,
@@ -32,8 +32,9 @@ router.post('/products', async (req, res) => {
     }
 });
 
+
 // Actualizar un producto
-router.put('/:id', async (req, res) => { // Cambio aquí para usar /api/productos/:id
+router.put('/:id', async (req, res) => { 
     try {
         const product = await Product.findById(req.params.id);
         if (!product) return res.status(404).json({ message: 'Producto no encontrado' });
