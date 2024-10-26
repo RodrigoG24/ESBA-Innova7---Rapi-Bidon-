@@ -207,3 +207,51 @@ function deleteProduct() {
     .catch(error => console.error('Error al eliminar el producto:', error));
 }
 
+
+
+// Login
+// Estado de inicio de sesión
+let isLoggedIn = false;
+
+// Evento de envío del formulario de inicio de sesión
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evita el comportamiento por defecto del formulario
+
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Realiza una petición POST al backend para autenticar al usuario
+    const response = await fetch('http://localhost:5000/api/login', { 
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+    });
+
+    const result = await response.json();
+    
+    if (result.success) {
+        console.log("Inicio de sesion exitoso!", response);
+        isLoggedIn = true; // Actualiza el estado a "iniciado"
+        
+        // Oculta el formulario de inicio de sesión y muestra el panel de administración
+        document.getElementById('adminOptions').style.display = 'block'; // Muestra el panel de administración
+        document.getElementById('loginFormContainer').style.display = 'none'; // Oculta el formulario de inicio de sesión
+    } else {
+        alert(result.message); // Muestra un mensaje de error
+    }
+});
+
+// Evento del botón "Administrador" en el navbar
+document.querySelector('a[href="#admin"]').addEventListener('click', function() {
+    if (!isLoggedIn) {
+        // Si no está autenticado, muestra el formulario de inicio de sesión
+        document.getElementById('loginFormContainer').style.display = 'block';
+        document.getElementById('adminOptions').style.display = 'none'; // Asegúrate de ocultar el panel de administración
+    } else {
+        // Si está autenticado, solo muestra el panel de administración
+        document.getElementById('adminOptions').style.display = 'block';
+        document.getElementById('loginFormContainer').style.display = 'none';
+    }
+});

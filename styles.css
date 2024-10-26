@@ -15,11 +15,18 @@ body {
     font-family: "Open Sans", sans-serif;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* Ajuste del header */
 header {
     background: linear-gradient(to bottom, #1a72b2, #299dbc);
-    height: 60vh; /* Asegura que el header ocupe todo el alto de la ventana */
+    height: 40vh; /* Asegura que el header ocupe todo el alto de la ventana */
     color: white;
     display: flex;
     flex-direction: column;
@@ -182,6 +189,7 @@ button:hover {
 
 
 #app {
+    flex: 1;
     margin: 0;
     width: 100%;
 }
@@ -230,6 +238,8 @@ button:hover {
     padding: 20px;
     text-align: center;
 }
+
+
 
 .contacto {
     /*background: linear-gradient(to bottom, #b7de62, #3b9e43 );*/
@@ -282,6 +292,11 @@ button:hover {
     color: #555; /* Color del texto */
     line-height: 1.6; /* Mejorar la legibilidad del texto */
     margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+#about img {
+    display: block;
+    margin: 0 auto;   
 }
 
 .featured-products {
@@ -396,41 +411,121 @@ button:hover {
 
 
 
-input[type="text"], input[type="number"] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: border 0.3s; /* Transición suave en el borde */
-}
-
-input[type="text"]:focus, input[type="number"]:focus {
-    border: 1px solid #8bc34a; /* Cambia el color del borde al enfocar */
-}
-
-#about img {
-    display: block;
-    margin: 0 auto;   
-}
-
 #admin {
+    
+    margin: 0 auto; /* Centra el panel horizontalmente */
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar el panel */
 }
 
 #admin h1 {
-    font-size: 3rem;
-    padding-bottom: 2%;
+    font-size: 2rem; /* Ajusta el tamaño del título */
+    padding-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 90%; /* Reduce el ancho de los campos de entrada */
+    max-width: 400px; /* Establece un ancho máximo */
+    padding: 12px 20px;
+    margin: 8px auto; /* Añade margen superior e inferior */
+    display: block; /* Coloca los inputs en una columna */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border: 1px solid #8bc34a;
 }
 
 #admin button {
-    margin-bottom: 2%;
+    display: block; /* Coloca el botón en una nueva línea */
+    width: 90%; /* Hace que el botón tenga el mismo ancho que los inputs */
+    max-width: 400px;
+    padding: 12px;
+    margin: 12px auto 2%; /* Centra el botón y añade margen superior */
+    border: none;
+    border-radius: 4px;
+    background-color: #8bc34a; /* Color de fondo del botón */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+#admin button:hover {
+    background-color: #7cb342; /* Color de fondo al pasar el ratón */
+}
+
+/* Oculta el panel de administración inicialmente */
+#adminPanel {
+    display: none;
+}
+
+/* Estilos del contenedor del formulario */
+#loginFormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    font-family: Arial, sans-serif;
+    border: none;
+}
+
+/* Estilos del formulario */
+#loginForm {
+    /*background-color: white;*/
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Estilos de los campos de entrada */
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#loginForm input[type="text"]:focus,
+#loginForm input[type="password"]:focus {
+    border-color: #1e90ff;
+}
+
+/* Estilo del botón */
+#loginForm button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #1a78d1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+    background-color: #1a78d1;
+}
+
 
 /* ACA EMPIEZA EL RESPONSIVE */
 @media (max-width: 768px) {

@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const mongoose = require('./db');
 const productosRoutes = require('./routes/productos');
+const loginRoutes = require('./routes/login'); // Importa la ruta de inicio de sesión
 const cors = require('cors');
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 console.log('Solicitud a /api/productos:');
 app.use('/api/productos', productosRoutes);
+app.use('/api/login', loginRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);

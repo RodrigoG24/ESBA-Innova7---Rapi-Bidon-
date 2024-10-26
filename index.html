@@ -69,25 +69,36 @@
         
         <!-- Panel de administración -->
         <section id="admin" class="content" style="display:none;">
-            <h1>Panel de Administración</h1>
+            <div id="loginFormContainer">
+                <!-- Formulario de inicio de sesión -->
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Usuario" required>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+            </div>
+            
+            <div id="adminOptions" style="display:none;">
+                <h1>Panel de Administración</h1>
+                <h2>Agregar Nuevo Producto</h2>
+                <input type="text" id="new-product-name" placeholder="Nombre del producto">
+                <input type="number" id="new-product-price" placeholder="Precio">
+                <input type="number" id="new-product-stock" placeholder="Stock">
+                <input type="text" id="new-product-image" placeholder="URL de la imagen">
+                <button onclick="addProduct()">Agregar Producto</button>
 
-            <h2>Agregar Nuevo Producto</h2>
-            <input type="text" id="new-product-name" placeholder="Nombre del producto">
-            <input type="number" id="new-product-price" placeholder="Precio">
-            <input type="number" id="new-product-stock" placeholder="Stock">
-            <input type="text" id="new-product-image" placeholder="URL de la imagen">
-            <button onclick="addProduct()">Agregar Producto</button>
+                <h2>Modificar Producto Existente</h2>
+                <select id="product-select"></select>
+                <input type="number" id="update-price" placeholder="Nuevo precio">
+                <input type="number" id="update-stock" placeholder="Nuevo stock">
+                <button onclick="updateProduct()">Actualizar Producto</button>
 
-            <h2>Modificar Producto Existente</h2>
-            <select id="product-select"></select>
-            <input type="number" id="update-price" placeholder="Nuevo precio">
-            <input type="number" id="update-stock" placeholder="Nuevo stock">
-            <button onclick="updateProduct()">Actualizar Producto</button>
-
-            <h2>Eliminar Producto</h2>
-            <select id="delete-product-select"></select>
-            <button id="delete-btn" onclick="deleteProduct()">Eliminar Producto</button>
+                <h2>Eliminar Producto</h2>
+                <select id="delete-product-select"></select>
+                <button id="delete-btn" onclick="deleteProduct()">Eliminar Producto</button>
+            </div>
         </section>
+
 
         <!-- Panel de Acerca de nosotros -->
         <section id="about" class="content about-container" style="display:none;">
@@ -104,15 +115,17 @@
         
     </div>
 
-    <!-- Contacto -->
-    <div class="contacto">
-        <h2>Contacto</h2>
-        <div class="botones">
-            <button onclick="window.location.href='mailto:info@rapibidon.com'">Enviar Email</button>
-            <button onclick="window.open('https://wa.me/1234567890', '_blank')">Contactar por WhatsApp</button>
+    <footer>
+        <!-- Contacto -->
+        <div id="contacto" class="contacto">
+            <h2>Contacto</h2>
+            <div class="botones">
+                <button onclick="window.location.href='mailto:info@rapibidon.com'">Enviar Email</button>
+                <button onclick="window.open('https://wa.me/1234567890', '_blank')">Contactar por WhatsApp</button>
+            </div>
+            <p>&copy; 2024 Distribuidora de Productos de Limpieza "Rapi Bidon". Todos los derechos reservados.</p>
         </div>
-        <p>&copy; 2024 Distribuidora de Productos de Limpieza "Rapi Bidon". Todos los derechos reservados.</p>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
