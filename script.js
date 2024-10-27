@@ -1,7 +1,8 @@
 // URL de la API - Agregamos dos url personalizadas, una para produccion y otra para hacer pruebas en testing locales
 const API_URL = 'https://innova7-rapi-bidon.onrender.com/api/productos'; // URL de producción
 // const API_URL = 'http://localhost:5000/api/productos'; // URL de desarrollo
-const API_URL_LOGIN = 'https://innova7-rapi-bidon.onrender.com/api/users';
+const API_URL_LOGIN = 'https://innova7-rapi-bidon.onrender.com/api/login';
+// const API_URL_LOGIN = 'http://localhost:5000/api/login';
 
 
 function showSection(section) {
