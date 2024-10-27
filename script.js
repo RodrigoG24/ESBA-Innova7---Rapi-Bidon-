@@ -1,6 +1,7 @@
 // URL de la API - Agregamos dos url personalizadas, una para produccion y otra para hacer pruebas en testing locales
 const API_URL = 'https://innova7-rapi-bidon.onrender.com/api/productos'; // URL de producción
 // const API_URL = 'http://localhost:5000/api/productos'; // URL de desarrollo
+const API_URL_LOGIN = 'https://innova7-rapi-bidon.onrender.com/api/users';
 
 
 function showSection(section) {
@@ -226,7 +227,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const password = document.getElementById('password').value;
 
     // Realiza una petición POST al backend para autenticar al usuario
-    const response = await fetch(API_URL, { 
+    const response = await fetch(API_URL_LOGIN, { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
