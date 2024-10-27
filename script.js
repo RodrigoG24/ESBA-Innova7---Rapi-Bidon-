@@ -1,3 +1,8 @@
+// URL de la API - Agregamos dos url personalizadas, una para produccion y otra para hacer pruebas en testing locales
+const API_URL = 'https://innova7-rapi-bidon.onrender.com/api/productos'; // URL de producción
+// const API_URL = 'http://localhost:5000/api/productos'; // URL de desarrollo
+
+
 function showSection(section) {
     const sections = document.querySelectorAll('.content');
     sections.forEach((sec) => {
@@ -16,7 +21,7 @@ function displayProducts() {
     const productList = document.querySelector('.product-list');
     productList.innerHTML = ''; // Limpiar la lista antes de agregar nuevos elementos
 
-    fetch('http://localhost:5000/api/productos')  // Petición GET a la API
+    fetch(API_URL)  // Petición GET a la API
         .then(response => {
             console.log('Respuesta de la API:', response); // 2. Ver respuesta de la API
             if (!response.ok) {
@@ -79,7 +84,7 @@ function populateProductSelects() {
     deleteProductSelect.innerHTML = '';
 
     // Obtener productos desde la API
-    fetch('http://localhost:5000/api/productos')
+    fetch(API_URL)
         .then(response => response.json())
         .then(products => {
             if (!products || products.length === 0) {
@@ -124,7 +129,7 @@ async function addProduct() {
 
     try {
         // Enviar la solicitud POST al servidor para agregar el nuevo producto
-        const response = await fetch('http://localhost:5000/api/productos', {
+        const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -164,7 +169,7 @@ function updateProduct() {
     const newStock = document.getElementById('update-stock').value;
 
     // Petición PUT para actualizar el producto
-    fetch(`http://localhost:5000/api/productos/${productId}`, { // La ruta ahora es coherente
+    fetch(`${API_URL}/${productId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -190,7 +195,7 @@ function deleteProduct() {
     console.log("Producto seleccionado para eliminar:", productId); // Verificar el ID del producto
 
     // Petición DELETE para eliminar el producto
-    fetch(`http://localhost:5000/api/productos/${productId}`, {
+    fetch(`${API_URL}/${productId}`, {
         method: 'DELETE'
     })
     .then(response => {
@@ -221,7 +226,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const password = document.getElementById('password').value;
 
     // Realiza una petición POST al backend para autenticar al usuario
-    const response = await fetch('http://localhost:5000/api/login', { 
+    const response = await fetch(API_URL, { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

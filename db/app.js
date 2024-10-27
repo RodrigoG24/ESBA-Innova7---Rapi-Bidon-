@@ -15,15 +15,18 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware de seguridad
 app.use(
-    helmet({
-        contentSecurityPolicy: {
-            directives: {
-                defaultSrc: ["'self'"],
-                fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'], // URL para fuentes de Google Fonts
-                styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"], // URL para estilos de Google Fonts
-            },
-        },
-    })
+  helmet({
+      contentSecurityPolicy: {
+          directives: {
+              defaultSrc: ["'self'"],
+              fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
+              styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
+              connectSrc: ["'self'", 'https://innova7-rapi-bidon.onrender.com'], // Permite la conexión a la API de producción
+              // Se puede agregar localhost tambien si es necesario aca:
+              // connectSrc: ["'self'", 'http://localhost:5000', 'https://innova7-rapi-bidon.onrender.com'],
+          },
+      },
+  })
 );
 
 app.use(cors());
