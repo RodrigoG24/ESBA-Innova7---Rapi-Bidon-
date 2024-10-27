@@ -532,6 +532,12 @@ input[type="number"]:focus {
     nav li {
         display: block; /* Navegación vertical */
         margin: 10px 0; /* Espacio entre los elementos */
+        
+    }
+
+    nav a {
+        text-align: center;
+        padding: 10px 15px;
     }
 
     .contenedor {
@@ -544,6 +550,14 @@ input[type="number"]:focus {
 
     .header-content {
         padding: 10px; /* Menos espacio en móviles */
+    }
+
+    .title-section h2{
+        font-size: 2rem;
+    }
+
+    .title-section .logo-container {
+        height: auto;
     }
 }
 

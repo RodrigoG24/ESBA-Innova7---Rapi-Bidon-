@@ -254,7 +254,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 document.querySelector('a[href="#admin"]').addEventListener('click', function() {
     if (!isLoggedIn) {
         // Si no está autenticado, muestra el formulario de inicio de sesión
-        document.getElementById('loginFormContainer').style.display = 'block';
+        document.getElementById('loginFormContainer').style.display = 'flex';
         document.getElementById('adminOptions').style.display = 'none'; // Asegúrate de ocultar el panel de administración
     } else {
         // Si está autenticado, solo muestra el panel de administración
