@@ -21,6 +21,8 @@ app.use(
               defaultSrc: ["'self'"],
               fontSrc: ["'self'", 'https://fonts.gstatic.com', 'data:'],
               styleSrc: ["'self'", 'https://fonts.googleapis.com', "'unsafe-inline'"],
+              scriptSrc: ["'self'", "'unsafe-inline'"], // Permitir scripts en línea
+              scriptSrcAttr: ["'self'", "'unsafe-inline'"], // Permitir manejadores de eventos en línea
               connectSrc: ["'self'", 'https://innova7-rapi-bidon.onrender.com'], // Permite la conexión a la API de producción
               // Se puede agregar localhost tambien si es necesario aca:
               // connectSrc: ["'self'", 'http://localhost:5000', 'https://innova7-rapi-bidon.onrender.com'],
